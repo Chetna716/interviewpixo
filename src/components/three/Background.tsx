@@ -76,9 +76,16 @@ void main() {
   float n4 = smoothstep(0.3 + ml, 0.3 + ml + 0.2, n);
   color = mix(color, black, n4);
 
+  // Enhanced grain effect
   vec2 uvrandom = v_uv;
   uvrandom.y *= random(vec2(uvrandom.y, 0.4));
-  color.rgb += random(uvrandom) * 0.05;
+  
+  // Multiple layers of grain for more texture
+  float grain1 = random(uvrandom) * 0.15;
+  float grain2 = random(uvrandom * 2.5) * 0.08;
+  float grain3 = random(uvrandom * 7.3) * 0.04;
+  
+  color.rgb += grain1 + grain2 + grain3;
 
   gl_FragColor = vec4(color, 1.0);
 }
