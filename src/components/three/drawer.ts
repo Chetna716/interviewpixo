@@ -24,16 +24,20 @@ export class Drawer {
 
 		const fontSize = 85
 
-		ctx.textAlign = 'left'
-		ctx.textBaseline = 'hanging'
+		ctx.textAlign = 'center'
+		ctx.textBaseline = 'middle'
 
 		ctx.font = `bold ${fontSize}px 'Poppins'`
 		ctx.fillStyle = '#fff'
 
-		const text2Metrics = ctx.measureText(this._text2)
-
-		ctx.fillText(this._text1, this._margin, this._margin)
-		ctx.fillText(this._text2, width - text2Metrics.width - this._margin, height - (fontSize + this._margin))
+		// Center the text horizontally and vertically
+		ctx.fillText(this._text1, width / 2, height / 2)
+		
+		// Only draw text2 if it's not empty
+		if (this._text2.trim() !== '') {
+			const text2Metrics = ctx.measureText(this._text2)
+			ctx.fillText(this._text2, width - text2Metrics.width - this._margin, height - (fontSize + this._margin))
+		}
 
 		// ctx.lineWidth = 3
 		// ctx.strokeStyle = '#f00'

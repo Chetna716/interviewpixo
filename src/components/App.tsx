@@ -7,7 +7,6 @@ export const App: VFC = () => {
 	return (
 		<div className={styles.container}>
 			<TCanvas />
-			<LinkIconButton imagePath="/assets/icons/github.svg" linkPath="https://github.com/nemutas/r3f-monopo-london" />
 		</div>
 	)
 }

@@ -17,11 +17,10 @@ export const TCanvas: VFC = () => {
 				<Background />
 				<Lense />
 				<TextPlane
-					text={['What shall', 'I create today?']}
+					text={['PIXONOIDS', '']}
 					vertexShader={enVertexShader}
 					fragmentShader={enFragmentShader}
 				/>
-				<TextPlane text={['今日は', '何を作ろうか?']} vertexShader={jpVertexShader} fragmentShader={jpFragmentShader} />
 			</Suspense>
 			{/* helper */}
 			{/* <Stats /> */}
